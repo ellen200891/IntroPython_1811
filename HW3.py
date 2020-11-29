@@ -36,7 +36,9 @@ print(low_str)
 # Пример: было - "qwer", стало - "qwerqwer". Если длинна не меньше 5, то оставить строку как есть.
 my_str = input("Напишите текст: ")
 len_str = len(my_str)
-print(my_str*2) if len_str < 5 else print(my_str)
+new_str = my_str*2
+my_str = new_str if len_str < 5 else my_str
+print(my_str)
 
 ##############################################################################
 # 7) У вас есть переменная my_str, тип - str. Если ее длинна меньше 5, то допишите в конец строки перевернутую себя же.
@@ -44,7 +46,8 @@ print(my_str*2) if len_str < 5 else print(my_str)
 my_str = input("Напишите текст: ")
 len_str = len(my_str)
 str_my = my_str[::-1]
-print(my_str) if len_str > 5 else print(str_my)
+my_str = str_my if len_str < 5 else my_str
+print(my_str)
 
 ##############################################################################
 # 8) У вас есть переменная my_str, тип - str. Вывести на экран все символы из этой строки, которые являются буквой или цифрой.
