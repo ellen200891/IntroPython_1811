@@ -5,7 +5,7 @@
 # Если на четном - оставить без изменения.
 # Задание сделать с использованием enumerate.
 
-my_list = ['qwe', '123', 'zxc', '456', 'asd', '789']
+my_list = ['qwe', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe']
 new_list = []
 for id, item in enumerate(my_list):
     if id % 2 != 0:
@@ -21,7 +21,7 @@ print(new_list)
 # элементы из my_list у которых первый символ - буква "a".
 
 
-my_list = ['qwe', '123', 'zxc', '456', 'asd', '789']
+my_list = ['qwe', '123', 'zxc', '456', 'asd', '789', 'hga']
 first_a = []
 first_a = [element for element in my_list if element[0] == 'a']
 print(first_a)
@@ -62,8 +62,8 @@ print(new_str)
 # 6. Даны две строки. Создать список в который поместить те символы,
 # которые есть в обеих строках хотя бы раз.
 
-first_str = '12345678k998765kkk43210asddsa'
-second_str = 'kjkjlk jkljkj jklkj1'
+first_str = '12345678k998765kkk43210asddlsa'
+second_str = '9999lll'
 for element in first_str:
     for element in second_str:
         new_str = set(first_str).intersection(set(second_str))
@@ -75,14 +75,17 @@ print(list(new_str))
 
 first_str = '1234567r8j99'
 first_set = set(first_str)
-second_str = 'jlkjlkjrlj1999'
+second_str = '9999888'
 second_set = set(second_str)
 new_str_1 = set([x for x in first_set if first_str.count(x) == 1])
 new_str_2 = set([x for x in second_set if second_str.count(x) == 1])
-for i in new_str_1:
-    for i in new_str_2:
-        new_str = new_str_1.intersection(new_str_2)
-print(list(new_str))
+try:
+    for i in new_str_1:
+        for i in new_str_2:
+            new_str = new_str_1.intersection(new_str_2)
+    print(list(new_str))
+except NameError:
+    print('Совпадений нет!')
 
 #############################################################################
 # 8. Описать с помощью словаря следующую структуру для конкретного человека (можно придумать):
