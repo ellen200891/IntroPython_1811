@@ -16,6 +16,9 @@ print(len(data), type(data))
 for line in data:
     print(line)
 
+with open("C:/Users/Пользователь/Desktop/Hillel1/lesson7.txt", "w") as txt_file:
+    txt_file.write("\n".join(data))
+
 
 
 

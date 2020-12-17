@@ -1,6 +1,17 @@
 # 1. Считать данные из файла domains.txt
 # Названия интернет доменов сохранить их в виде списка строк (названия сохранить без точки).
-#
+import os
+
+with open("C:/Users/Пользователь/Desktop/Hillel1/IntroPython_1811/domains.txt", 'r', encoding="utf-8") as txt_file:
+    data = []
+    for line in txt_file.readlines():
+        line = line.replace('.','')
+        data.append(line.strip())
+print(data)
+
+with open("C:/Users/Пользователь/Desktop/Hillel1/IntroPython_1811/domains8.txt", "w") as txt_file:
+    txt_file.write(''.join(data))
+###########################################################################################
 # 2. Считать данные из файла names.txt и сохранить в список только фамилии из файла.
 # Каждая строка файла содержит номер, фамилию, страну, некоторое число (таблица взята с википедии).
 # Фамилия находится всегда на одной и той же позиции в строке.
