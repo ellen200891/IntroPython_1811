@@ -6,18 +6,18 @@
 # import string
 import os
 
-
-with open("C:/Users/Пользователь/Desktop/Hillel1/lesson7.txt","r", encoding="utf-8") as txt_file:
-    data = []
-    for line in txt_file.readlines():
-        data.append(line.strip())
-
-print(len(data), type(data))
-for line in data:
-    print(line)
-
-with open("C:/Users/Пользователь/Desktop/Hillel1/lesson7.txt", "w") as txt_file:
-    txt_file.write("\n".join(data))
+#
+# with open("C:/Users/Пользователь/Desktop/Hillel1/lesson7.txt","r", encoding="utf-8") as txt_file:
+#     data = []
+#     for line in txt_file.readlines():
+#         data.append(line.strip())
+#
+# print(len(data), type(data))
+# for line in data:
+#     print(line)
+#
+# with open("C:/Users/Пользователь/Desktop/Hillel1/lesson7.txt", "w") as txt_file:
+#     txt_file.write("\n".join(data))
 
 
 

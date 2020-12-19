@@ -29,11 +29,12 @@ print(triangle)
 # my_str = 'I'm the string'
 # Печатает ***I'm the string***
 
+def print_my_str(my_str):
+    star = "***"
+    print(f"{star}{my_str}{star}")
 
 my_str = "I'm the string"
-star = "***"
-print(f"{star}{my_str}{star}")
-
+print_my_str(my_str)
 ###########################################################################
 # 4) Дан список словарей persons в формате [{"name": "John", "age": 15}, ... ,{"name": "Jack", "age": 45}]
 # а) Напечатать имя самого молодого человека. Если возраст совпадает - напечатать все имена.
@@ -42,7 +43,7 @@ print(f"{star}{my_str}{star}")
 
 persons = [{"name": "Luce", "age": 76}, {"name": "Nick", "age": 17}, {"name": "Alice", "age": 92}]
 names_ages = [(person["name"], person["age"]) for person in persons]
-min_age = 100
+min_age = persons[0]['age']
 name_min_age = []
 list_person = []
 sum_start = 0
@@ -89,24 +90,24 @@ print(midl_age)
 # г) Объединить эти два словаря в новый словарь по правилу:
 # если ключ есть только в одном из двух словарей - поместить пару ключ:значение,
 # если ключ есть в двух словарях - поместить пару {ключ: [значение_из_первого_словаря, значение_из_второго_словаря]}
-
-
 my_dict_1 = {"street": "Lenina",
              "home": '5',
              "flat": "1"}
 my_dict_2 = {"squer": '12',
              "flat": "2"}
 
-##############  А, Б    ##############
+##############  A   ##############
 first_keys = set(my_dict_1.keys())
-first_keys1 = first_keys.copy()
+res_a = first_keys.copy()
 second_keys = set(my_dict_2.keys())
 second_keys2 = second_keys.copy()
-first_keys1.update(second_keys2)
+res_a.update(second_keys2)
+res_a = list(res_a)
+print(res_a)
+##############  Б   ##############
+
 first_keys.difference_update(second_keys)
-first_keys1 = list(first_keys1)
 first_keys = list(first_keys)
-print(first_keys1)
 print(first_keys)
 
 ##############  В    ##############
@@ -116,9 +117,12 @@ print(my_dict_3)
 
 ##############  C    ##############
 my_dict_4 = {}
-for element in my_dict_1.items():
-    if element[0] not in my_dict_2:
-        my_dict_4[element[0]] = element[1]
+keys_1 = set(my_dict_1.keys())
+keys_2 = set(my_dict_2.keys())
+for key in keys_1.union(keys_2):
+    if key in my_dict_1 and key in my_dict_2:
+        my_dict_4[key] = [my_dict_1[key], my_dict_2[key]]
+    elif key in my_dict_1 and  key not in my_dict_2:
+        my_dict_4[key] = my_dict_1[key]
     else:
-        my_dict_4[element[0]] = [element[1], my_dict_2[element[0]]]
-print(my_dict_4)
+        my_dict_4[key] = my_dict_2[key]
