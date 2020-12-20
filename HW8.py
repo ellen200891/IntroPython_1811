@@ -14,13 +14,12 @@ print(domains)
 # Каждая строка файла содержит номер, фамилию, страну, некоторое число (таблица взята с википедии).
 # Фамилия находится всегда на одной и той же позиции в строке.
 
-with open("C:/Users/Пользователь/Desktop/Hillel1/IntroPython_1811/names.txt", 'r', encoding="utf-8") as txt_file:
+with open("names.txt", 'r') as txt_file:
     names = []
     for line in txt_file.readlines():
         line = line.replace('.', '')
         names.append(line.split('\t')[1])
 print(names)
-
 
 ###########################################################################################
 # 3. Написать функцию для генерирования e-mail в формате:
@@ -34,23 +33,34 @@ print(names)
 # print(e_mail)
 import random
 
+
 def create_number():
-    return random.randint(100,999)
+    return random.randint(100, 999)
 
 
-def create_email(names, domains):
-    names = names[0]
-    domains = domains[0]
-    number = create_number()
-    string = ''
-    result = f"{names}.{number}@{string}.{domains}"
+new_number = [random.randint(100, 999) for number in range(1)]
+
+
+def create_letter():
+    return random.choice(alph)
+
+
+alph = [chr(number) for number in range(ord('a'), ord('z') + 1)]
+alph = ''.join([random.choice(alph) for element in range(random.randint(5, 7))])
+
+def create_email():
     return result
 
-e_mail = create_email()
+
+names = random.choice(names)
+domains = random.choice(domains)
+number = random.choice(new_number)
+string = alph
+result = (f"{names}.{number}@{string}.{domains}")
+print(create_email())
+
+
+
+# e_mail = create_email()
 # шафл или   рендом чойс для доменов и имен
-
-
-
-
-
 # >>>miller.249@sgdyyur.com
