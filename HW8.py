@@ -44,11 +44,11 @@ def create_letter():
     return alph
 
 def create_email(names,domains):
-    names = random.choice(names)
-    domains = random.choice(domains)
+    name = random.choice(names)
+    domain = random.choice(domains)
     number = create_number()
     string = create_letter()
-    result = (f"{names}.{number}@{string}.{domains}")
+    result = (f"{name}.{number}@{string}.{domain}")
     return result
 
 print(create_email(names,domains))

@@ -18,14 +18,14 @@ import random
 import string
 
 def randstring():
+    high_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    low_letters = 'abcdefghijklmnopqrstuvwxyz'
+    signs = '., \n'
+    number = '1234567890'
+    choice_string = (high_letters + low_letters + signs + number)
+    new_string = ''.join([random.choice(choice_string) for i in range(random.randint(100, 1000))])
     return new_string
-high_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-low_letters = 'abcdefghijklmnopqrstuvwxyz'
-signs = '., \n'
-number = '1234567890'
-choice_string = (high_letters + low_letters + signs + number)
-new_string = ''.join([random.choice(choice_string) for i in range(random.randint(100, 1000))])
-print(new_string)
+print(randstring)
 # Функция 2. Создает данные для записи в файл json.
 # Создает и возвращает словарь со случайным количеством ключей (не менее 5 но не более 20 ключей).
 # Ключи - уникальные случайные строки длинны 5 символов из маленьких букв английского алфавита
