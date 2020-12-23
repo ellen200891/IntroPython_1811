@@ -35,29 +35,23 @@ import random
 
 
 def create_number():
-    return random.randint(100, 999)
-
-
-new_number = [random.randint(100, 999) for number in range(1)]
-
+    new_number = random.randint(100, 999)
+    return new_number
 
 def create_letter():
-    return random.choice(alph)
+    alph = [chr(number) for number in range(ord('a'), ord('z') + 1)]
+    alph = ''.join([random.choice(alph) for element in range(random.randint(5, 7))])
+    return alph
 
-
-alph = [chr(number) for number in range(ord('a'), ord('z') + 1)]
-alph = ''.join([random.choice(alph) for element in range(random.randint(5, 7))])
-
-def create_email():
+def create_email(names,domains):
+    names = random.choice(names)
+    domains = random.choice(domains)
+    number = create_number()
+    string = create_letter()
+    result = (f"{names}.{number}@{string}.{domains}")
     return result
 
-
-names = random.choice(names)
-domains = random.choice(domains)
-number = random.choice(new_number)
-string = alph
-result = (f"{names}.{number}@{string}.{domains}")
-print(create_email())
+print(create_email(names,domains))
 
 
 
