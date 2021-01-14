@@ -46,8 +46,6 @@ def read_txt(filename="authors.txt"):
 list_autors = read_txt()
 
 
-# print(list_name)
-
 ###################################################################################################################
 
 # 2.2) Написать функцию, которая принимает список строк полученной в пункте 2.1, и возвращает список словарей
@@ -58,8 +56,15 @@ list_autors = read_txt()
 def list_to_dict(list_autors):
     for autor in list_autors:
         name = dict_names(autor)
-        data = [dict_data(autor)]
-        print(data)
+        date = [dict_data(autor)]
+        keys = ['name', 'date']
+        zipped = zip(name, date)
+        dicts_names_data = [dict(zip(keys, values)) for values in zipped]
+        print(dicts_names_data)
+    # return dicts_names_data
+
+
+# print(dicts_names_data)
 
 
 def dict_names(autor):
@@ -95,17 +100,17 @@ def dict_data(autor):
     result = (f"{day}/{month_names}/{year}")
     return result
 
-list_to_dict(list_autors)
 
+list_to_dict(list_autors)
 
 # names = list_to_dict(name)
 # dates = data
 # def dict_names_data():
 #     keys = ['name', 'data']
-#     zipped = zip(names, dates)
+#     zipped = zip(name, data)
 #     dicts_names_data = [dict(zip(keys, values)) for values in zipped]
 #     return dicts_names_data
-
+#
 # print(dict_names_data())
 
 ##################################################################################################################
