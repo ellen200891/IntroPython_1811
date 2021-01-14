@@ -118,8 +118,10 @@ def list_to_dict(list_autors):
     dict_list = []
     for autor in list_autors:
         author_dict = {"name":"", "date":""}
-        author_dict["name"] = ''.join(dict_names(autor))
-        author_dict["date"] = dict_data(autor)
+        name = ''.join(dict_names(autor))
+        date = dict_data(autor)
+        author_dict["name"] = name
+        author_dict["date"] = date
         dict_list.append(author_dict)
     return dict_list
 
