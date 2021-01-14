@@ -117,15 +117,13 @@ def dict_data(autor):
 def list_to_dict(list_autors):
     dict_list = []
     for autor in list_autors:
-        author_dict = {"name":"", "date":""}
         name = ''.join(dict_names(autor))
         date = dict_data(autor)
-        author_dict["name"] = name
-        author_dict["date"] = date
+        author_dict = {"name": name, "date": date}
         dict_list.append(author_dict)
     return dict_list
 
-
+print(list_to_dict(list_autors))
 # ##################################################################################################################
 # # 2.3) Написать функцию, которая сохраняет результат пункта 2.2 в json файл.
 
