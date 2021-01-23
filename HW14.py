@@ -23,8 +23,6 @@
 
 
 
-
-
 import json
 import os
 
@@ -91,6 +89,9 @@ knight_worker.read_unit()
 knight_worker.increase_skill()
 knight_worker.increase_skill()
 archer_worker.increase_skill()
-print(archer_worker.data)
-print(mage_worker.data)
-print(knight_worker.data)
+
+
+
+# print(archer_worker.data)
+# print(mage_worker.data)
+# print(knight_worker.data)
