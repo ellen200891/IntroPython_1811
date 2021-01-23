@@ -1,0 +1,12 @@
+{
+  "name": "Mage",
+  "clan": "Idiots",
+  "health": 1,
+  "skills": [
+    {
+      "intelligence": 1,
+      "strength": 1,
+      "agility": 1
+    }
+  ]
+}
